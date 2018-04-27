@@ -20,9 +20,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/taobao', (req, res, next) => {
- 
-
-  var sql = 'SELECT * FROM taobao';
+  // console.log(req.query.id)
+  console.log(req)
+  var id = req.query.id;
+  console.log(id)
+  var sql = "";
+  if (JSON.stringify(req.query) == "{}") {
+    console.log(333)
+    sql = 'SELECT * FROM taobao';
+  }else {
+    console.log(2222)
+    sql = 'SELECT * FROM taobao where id='+id;
+  }
+  
   //查
   // connection.query(sql, function (err, result) {
   //   if (err) {
