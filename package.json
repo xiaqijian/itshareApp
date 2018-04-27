@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "git": "git add . && git commit -m 'updata' && git push "
   },
   "dependencies": {
     "body-parser": "~1.18.2",
