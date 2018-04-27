@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
   port: '3306',
   database: 'minapp',
 });
+connection.connect();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -16,7 +17,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/taobao', (req, res, next) => {
-  connection.connect();
+ 
 
   var sql = 'SELECT * FROM taobao';
   //查
@@ -32,7 +33,7 @@ router.get('/taobao', (req, res, next) => {
     console.log('------------------------------------------------------------\n\n');
   });
 
-  connection.end();
+  // connection.end();
 })
 
 module.exports = router;
